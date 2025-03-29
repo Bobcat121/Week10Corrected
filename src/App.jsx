@@ -4,13 +4,16 @@ import './App.css'
 import Image1 from './assets/image1.jpg'
 
 function MagicButton() {
+  const [count, setCount] = useState(0)
+
   return(
     <div>
-    <h3>This is a Magic Button</h3>
-    <button> Magic </button>
-    </div>
-  );
-}
+      <button onClick={() => setCount((count) => count + 1)}>
+       {count}
+      </button>
+    </div>)
+};
+
 
 const ImgData = {
   image: Image1,
@@ -36,8 +39,8 @@ function ZineRack() {
     }}
   >
     {zine.feeling}
+    <MagicButton />
   </button>
-  
   );
   return(
     <div class="Zones"> {listZines}  </div>
